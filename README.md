@@ -1,1 +1,1 @@
-# Fancy-s-workshop-
+# Fancy-workshop
