@@ -6,7 +6,11 @@
     <title>Fancy's Workshop | B2B留学销售管理工具箱</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         :root {
             --primary: #2B6CB0;
@@ -18,9 +22,6 @@
             --warm-light: #FEFCBF;
             --purple: #805AD5;
             --purple-light: #E9D8FD;
-            --red: #E53E3E;
-            --teal: #319795;
-            --teal-light: #B2F5EA;
             --gray-50: #F7FAFC;
             --gray-100: #EDF2F7;
             --gray-200: #E2E8F0;
@@ -45,8 +46,12 @@
             min-height: 100vh;
         }
 
+        /* ===== Navigation ===== */
         nav {
-            position: fixed; top: 0; left: 0; right: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             background: rgba(255,255,255,0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -54,62 +59,129 @@
             z-index: 100;
             transition: all 0.3s ease;
         }
-        nav.scrolled { box-shadow: var(--shadow-sm); }
-        .nav-inner {
-            max-width: 1200px; margin: 0 auto; padding: 0 24px;
-            height: 64px; display: flex; align-items: center; justify-content: space-between;
-        }
-        .nav-logo {
-            font-size: 20px; font-weight: 700; color: var(--primary);
-            display: flex; align-items: center; gap: 8px; text-decoration: none;
-        }
-        .nav-logo span {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .nav-links { display: flex; gap: 8px; }
-        .nav-links a {
-            text-decoration: none; color: var(--gray-500); font-size: 14px;
-            font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.2s ease;
-        }
-        .nav-links a:hover { color: var(--primary); background: var(--primary-lighter); }
-        .mobile-menu-btn {
-            display: none; background: none; border: none; cursor: pointer;
-            padding: 8px; color: var(--gray-600);
+
+        nav.scrolled {
+            box-shadow: var(--shadow-sm);
         }
 
-        .hero {
-            padding: 140px 24px 80px; text-align: center; position: relative; overflow: hidden;
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .nav-logo span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-500);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background: var(--primary-lighter);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--gray-600);
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            padding: 140px 24px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
         .hero::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
             background: radial-gradient(ellipse at 30% 20%, rgba(99,179,237,0.15) 0%, transparent 50%),
                         radial-gradient(ellipse at 70% 80%, rgba(56,161,105,0.1) 0%, transparent 50%),
                         radial-gradient(ellipse at 50% 50%, rgba(128,90,213,0.05) 0%, transparent 70%);
             animation: heroFloat 20s ease-in-out infinite;
         }
+
         @keyframes heroFloat {
             0%, 100% { transform: translate(0, 0) rotate(0deg); }
             33% { transform: translate(20px, -20px) rotate(1deg); }
             66% { transform: translate(-10px, 10px) rotate(-1deg); }
         }
-        .hero-content { position: relative; max-width: 700px; margin: 0 auto; }
+
+        .hero-content {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
         .hero-avatar {
-            width: 88px; height: 88px; border-radius: 50%;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
             background: linear-gradient(135deg, var(--primary-light), var(--accent));
-            display: flex; align-items: center; justify-content: center;
-            font-size: 36px; font-weight: 700; color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
             margin: 0 auto 24px;
             box-shadow: 0 8px 24px rgba(43,108,176,0.25);
         }
+
         .hero h1 {
-            font-size: 40px; font-weight: 700; color: var(--gray-800);
-            margin-bottom: 12px; letter-spacing: -0.02em;
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
         }
+
         .hero h1 .wave {
-            display: inline-block; animation: wave 2.5s ease-in-out infinite;
+            display: inline-block;
+            animation: wave 2.5s ease-in-out infinite;
             transform-origin: 70% 70%;
         }
+
         @keyframes wave {
             0%, 60%, 100% { transform: rotate(0deg); }
             10% { transform: rotate(14deg); }
@@ -118,142 +190,295 @@
             40% { transform: rotate(-4deg); }
             50% { transform: rotate(10deg); }
         }
+
         .hero p {
-            font-size: 18px; color: var(--gray-500); max-width: 540px;
-            margin: 0 auto 32px; line-height: 1.8;
+            font-size: 18px;
+            color: var(--gray-500);
+            max-width: 540px;
+            margin: 0 auto 32px;
+            line-height: 1.8;
         }
-        .hero-tags { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+        .hero-tags {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .hero-tag {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 6px 14px; border-radius: 20px; font-size: 13px;
-            font-weight: 500; border: 1px solid var(--gray-200);
-            background: white; color: var(--gray-600); transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid var(--gray-200);
+            background: white;
+            color: var(--gray-600);
+            transition: all 0.2s ease;
         }
+
         .hero-tag:hover {
             border-color: var(--primary-light);
-            background: var(--primary-lighter); color: var(--primary);
+            background: var(--primary-lighter);
+            color: var(--primary);
             transform: translateY(-1px);
         }
 
-        .stats-bar {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px; max-width: 1200px; margin: 0 auto 48px; padding: 0 24px;
+        /* ===== Modules Section ===== */
+        .modules {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
         }
-        .stat-card {
-            background: white; border-radius: var(--radius-sm); padding: 24px;
-            border: 1px solid var(--gray-200); text-align: center; transition: all 0.2s ease;
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
         }
-        .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-        .stat-number { font-size: 32px; font-weight: 700; margin-bottom: 4px; }
-        .stat-number.blue { color: var(--primary); }
-        .stat-number.green { color: var(--accent); }
-        .stat-number.orange { color: var(--warm); }
-        .stat-number.purple { color: var(--purple); }
-        .stat-label { font-size: 13px; color: var(--gray-400); font-weight: 500; }
 
-        .modules { max-width: 1200px; margin: 0 auto; padding: 0 24px 80px; }
-        .section-header { text-align: center; margin-bottom: 48px; }
-        .section-header h2 { font-size: 28px; font-weight: 700; color: var(--gray-800); margin-bottom: 8px; }
-        .section-header p { color: var(--gray-400); font-size: 15px; }
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 8px;
+        }
 
+        .section-header p {
+            color: var(--gray-400);
+            font-size: 15px;
+        }
+
+        /* Module Cards */
         .module-card {
-            background: white; border-radius: var(--radius); border: 1px solid var(--gray-200);
-            overflow: hidden; margin-bottom: 32px; transition: all 0.3s ease;
-            opacity: 0; transform: translateY(20px);
+            background: white;
+            border-radius: var(--radius);
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+            margin-bottom: 32px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
         }
-        .module-card.visible { opacity: 1; transform: translateY(0); }
-        .module-card:hover { box-shadow: var(--shadow-lg); border-color: transparent; }
+
+        .module-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .module-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
 
         .module-header {
-            padding: 28px 32px; display: flex; align-items: center; gap: 16px;
-            cursor: pointer; user-select: none;
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            user-select: none;
         }
+
         .module-icon {
-            width: 48px; height: 48px; border-radius: var(--radius-sm);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 22px; flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
         }
+
         .module-icon.blue { background: var(--primary-lighter); }
         .module-icon.green { background: var(--accent-light); }
         .module-icon.orange { background: var(--warm-light); }
         .module-icon.purple { background: var(--purple-light); }
-        .module-info h3 { font-size: 18px; font-weight: 600; color: var(--gray-800); margin-bottom: 4px; }
-        .module-info p { font-size: 14px; color: var(--gray-400); }
-        .module-toggle {
-            margin-left: auto; width: 32px; height: 32px; border-radius: 50%;
-            background: var(--gray-100); display: flex; align-items: center; justify-content: center;
-            transition: all 0.3s ease; flex-shrink: 0;
-        }
-        .module-toggle svg {
-            width: 16px; height: 16px; color: var(--gray-400); transition: transform 0.3s ease;
-        }
-        .module-card.open .module-toggle svg { transform: rotate(180deg); }
-        .module-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-        .module-body-inner { padding: 0 32px 28px; }
-        .tool-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;
+
+        .module-info h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 4px;
         }
 
-        /* Tool Card */
+        .module-info p {
+            font-size: 14px;
+            color: var(--gray-400);
+        }
+
+        .module-toggle {
+            margin-left: auto;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .module-toggle svg {
+            width: 16px;
+            height: 16px;
+            color: var(--gray-400);
+            transition: transform 0.3s ease;
+        }
+
+        .module-card.open .module-toggle svg {
+            transform: rotate(180deg);
+        }
+
+        .module-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .module-body-inner {
+            padding: 0 32px 28px;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
         .tool-card {
-            background: var(--gray-50); border-radius: var(--radius-sm); padding: 20px;
-            border: 1px solid var(--gray-100); transition: all 0.2s ease; cursor: default;
-            text-decoration: none; color: inherit; display: block;
+            background: var(--gray-50);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            border: 1px solid var(--gray-100);
+            transition: all 0.2s ease;
+            cursor: default;
         }
+
         .tool-card:hover {
-            background: white; border-color: var(--gray-200);
-            box-shadow: var(--shadow-sm); transform: translateY(-2px);
+            background: white;
+            border-color: var(--gray-200);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
         }
-        .tool-card-clickable:hover {
-            border-color: var(--purple-light);
-            box-shadow: 0 4px 16px rgba(128,90,213,0.15);
+
+        .tool-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
         }
-        .tool-card-clickable .tool-card-arrow {
-            display: inline-flex; align-items: center; gap: 4px;
-            font-size: 12px; font-weight: 600; color: var(--purple);
-            margin-top: 12px;
-        }
-        .tool-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+
         .tool-card-icon {
-            width: 36px; height: 36px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 17px; flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            flex-shrink: 0;
         }
+
         .tool-card-icon.blue { background: #DBEAFE; }
         .tool-card-icon.green { background: #D1FAE5; }
         .tool-card-icon.orange { background: #FEF3C7; }
         .tool-card-icon.purple { background: #EDE9FE; }
         .tool-card-icon.red { background: #FEE2E2; }
         .tool-card-icon.teal { background: #CCFBF1; }
-        .tool-card h4 { font-size: 15px; font-weight: 600; color: var(--gray-800); }
-        .tool-card p { font-size: 13px; color: var(--gray-400); line-height: 1.6; }
-        .tool-card .badge {
-            display: inline-block; margin-top: 10px; padding: 3px 10px;
-            border-radius: 12px; font-size: 11px; font-weight: 500;
+
+        .tool-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--gray-800);
         }
+
+        .tool-card p {
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+        .tool-card .badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
         .badge-blue { background: var(--primary-lighter); color: var(--primary); }
         .badge-green { background: var(--accent-light); color: var(--accent); }
         .badge-orange { background: var(--warm-light); color: var(--warm); }
         .badge-purple { background: var(--purple-light); color: var(--purple); }
         .badge-gray { background: var(--gray-100); color: var(--gray-500); }
 
-        /* Enneagram feature tags */
-        .feature-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; margin-bottom: 10px; }
-        .feature-tag {
-            font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 500;
+        /* ===== Stats Bar ===== */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
         }
-        .feature-tag-detail { background: #E9D8FD; color: #6B46C1; }
-        .feature-tag-ref { background: #FEFCBF; color: #975A16; }
-        .feature-tag-test { background: #C6F6D5; color: #276749; }
-        .feature-tag-report { background: #BEE3F8; color: #2B6CB0; }
 
+        .stat-card {
+            background: white;
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            border: 1px solid var(--gray-200);
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-number.blue { color: var(--primary); }
+        .stat-number.green { color: var(--accent); }
+        .stat-number.orange { color: var(--warm); }
+        .stat-number.purple { color: var(--purple); }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+
+        /* ===== Footer ===== */
         footer {
-            text-align: center; padding: 40px 24px;
-            border-top: 1px solid var(--gray-200); background: white;
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--gray-200);
+            background: white;
         }
-        footer p { font-size: 13px; color: var(--gray-400); margin-bottom: 4px; }
-        footer a { color: var(--primary); text-decoration: none; }
 
+        footer p {
+            font-size: 13px;
+            color: var(--gray-400);
+            margin-bottom: 4px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* ===== Responsive ===== */
         @media (max-width: 768px) {
             .hero h1 { font-size: 28px; }
             .hero p { font-size: 16px; }
@@ -263,43 +488,85 @@
             .module-body-inner { padding: 0 20px 20px; }
             .tool-grid { grid-template-columns: 1fr; }
             .stats-bar { grid-template-columns: repeat(2, 1fr); }
+
             .nav-links.mobile-open {
-                display: flex; flex-direction: column; position: absolute;
-                top: 64px; left: 0; right: 0; background: white;
-                border-bottom: 1px solid var(--gray-200); padding: 16px;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: white;
+                border-bottom: 1px solid var(--gray-200);
+                padding: 16px;
                 box-shadow: var(--shadow-md);
             }
         }
 
-        .module-card { animation: fadeIn 0.6s ease forwards; }
+        /* ===== Animations ===== */
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* ===== Search ===== */
         .search-wrapper {
-            max-width: 480px; margin: 0 auto 24px; position: relative;
+            max-width: 480px;
+            margin: 0 auto 24px;
+            position: relative;
         }
+
         .search-wrapper input {
-            width: 100%; padding: 14px 20px 14px 48px; border: 1px solid var(--gray-200);
-            border-radius: 12px; font-size: 15px; background: white; outline: none;
-            transition: all 0.2s ease; font-family: inherit;
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 15px;
+            background: white;
+            outline: none;
+            transition: all 0.2s ease;
+            font-family: inherit;
         }
+
         .search-wrapper input:focus {
-            border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(99,179,237,0.15);
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(99,179,237,0.15);
         }
-        .search-wrapper input::placeholder { color: var(--gray-300); }
+
+        .search-wrapper input::placeholder {
+            color: var(--gray-300);
+        }
+
         .search-icon {
-            position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--gray-300);
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-300);
         }
-        .module-card.search-hidden { display: none; }
-        .tool-card.search-highlight { border-color: var(--primary-light); background: var(--primary-lighter); }
+
+        /* Module highlight on search */
+        .module-card.search-hidden {
+            display: none;
+        }
+
+        .tool-card.search-highlight {
+            border-color: var(--primary-light);
+            background: var(--primary-lighter);
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-inner">
-            <a href="#" class="nav-logo"><span>✨ Fancy's Workshop</span></a>
+            <a href="#" class="nav-logo">
+                <span>✨ Fancy's Workshop</span>
+            </a>
             <div class="nav-links" id="navLinks">
                 <a href="#results">直接结果</a>
                 <a href="#team">团队建设</a>
@@ -316,6 +583,7 @@
         </div>
     </nav>
 
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-avatar">F</div>
@@ -332,6 +600,7 @@
         </div>
     </section>
 
+    <!-- Stats -->
     <div class="stats-bar">
         <div class="stat-card">
             <div class="stat-number blue">4</div>
@@ -351,7 +620,9 @@
         </div>
     </div>
 
+    <!-- Modules -->
     <section class="modules" id="modules">
+        <!-- Search -->
         <div class="search-wrapper">
             <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -366,7 +637,7 @@
         </div>
 
         <!-- Module 1: 直接结果 -->
-        <div class="module-card" id="results" data-keywords="业绩 竞品 话术 思维 分析 客户 签约 物料 宣传 海报 文案">
+        <div class="module-card" id="results" data-keywords="业绩 竞品 话术 思维 分析 客户 签约">
             <div class="module-header" onclick="toggleModule(this)">
                 <div class="module-icon blue">🎯</div>
                 <div class="module-info">
@@ -374,67 +645,62 @@
                     <p>日常业绩所需的核心工具与方法论</p>
                 </div>
                 <div class="module-toggle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </div>
             </div>
             <div class="module-body">
                 <div class="module-body-inner">
                     <div class="tool-grid">
-                        <div class="tool-card">
+                        <a href="tools/competitor-analysis.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon blue">🔍</div>
                                 <h4>竞品比对</h4>
                             </div>
                             <p>系统化对比竞品的产品、价格、服务、政策等维度，制定差异化竞争策略。</p>
                             <span class="badge badge-blue">策略工具</span>
-                        </div>
-                        <div class="tool-card">
+                        </a>
+                        <a href="tools/scripts-library.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon green">💬</div>
                                 <h4>话术库</h4>
                             </div>
                             <p>从破冰到成交的全流程话术沉淀，覆盖常见异议处理、逼单技巧、跟进模板。</p>
                             <span class="badge badge-green">实战积累</span>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-card-header">
-                                <div class="tool-card-icon purple">🧠</div>
-                                <h4>思维模型</h4>
-                            </div>
-                            <p>经典商业思维模型在团队管理与业务场景中的应用，提升决策质量与洞察力。</p>
-                            <span class="badge badge-purple">认知升级</span>
-                        </div>
-                        <div class="tool-card">
+                        </a>
+
+                        <a href="tools/performance-analysis.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon orange">📊</div>
                                 <h4>业绩数据分析</h4>
                             </div>
                             <p>签约率、转化率、客户生命周期价值等核心指标的可视化分析与趋势追踪。</p>
                             <span class="badge badge-orange">数据驱动</span>
-                        </div>
-                        <div class="tool-card">
+                        </a>
+                        <a href="tools/customer-journey.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon teal">📋</div>
                                 <h4>客户旅程管理</h4>
                             </div>
                             <p>从初次接触到签约出产的客户全生命周期管理，确保每个触点的体验质量。</p>
                             <span class="badge badge-green">流程管理</span>
-                        </div>
-                        <div class="tool-card">
+                        </a>
+                        <a href="tools/marketing-materials.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon red">📣</div>
                                 <h4>宣传物料制作</h4>
                             </div>
                             <p>宣传/分享海报与文案的设计模板与 AI 辅助生成流程，快速产出高质量内容。</p>
                             <span class="badge badge-orange">AI 效率</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Module 2: 团队建设 -->
-        <div class="module-card" id="team" data-keywords="九型 人格 舒伯 价值观 绩效 面谈 团队 管理 培育 新人 培训">
+        <div class="module-card" id="team" data-keywords="九型人格 舒伯 价值观 绩效 面谈 团队 管理 培育">
             <div class="module-header" onclick="toggleModule(this)">
                 <div class="module-icon green">👥</div>
                 <div class="module-info">
@@ -442,77 +708,61 @@
                     <p>识人、用人、育人的系统方法</p>
                 </div>
                 <div class="module-toggle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </div>
             </div>
             <div class="module-body">
                 <div class="module-body-inner">
                     <div class="tool-grid">
-                        <!-- 九型人格分析 - Highlight Card -->
-                        <a href="enneagram.html" class="tool-card tool-card-clickable" style="text-decoration:none;display:block;grid-column:1/-1;">
+                        <a href="enneagram.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon purple">🎭</div>
                                 <h4>九型人格分析</h4>
                             </div>
-                            <p>通过九型人格体系了解团队成员的性格特质与内在驱动力，优化分工协作、沟通方式与管理策略。</p>
-                            <div class="feature-tags">
-                                <span class="feature-tag feature-tag-detail">📖 人格详解</span>
-                                <span class="feature-tag feature-tag-ref">📋 速查对比</span>
-                                <span class="feature-tag feature-tag-test">🧪 九型测试</span>
-                                <span class="feature-tag feature-tag-report">📊 评估报告</span>
-                            </div>
-                            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:12px;">
-                                <div style="background:white;padding:10px 14px;border-radius:8px;border:1px solid var(--gray-200);">
-                                    <div style="font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px;">📖 人格详解</div>
-                                    <div style="font-size:11px;color:var(--gray-400);">9种人格完整解读 · 注意力/恐惧/快乐/管理提示 · 团队搭配速查</div>
-                                </div>
-                                <div style="background:white;padding:10px 14px;border-radius:8px;border:1px solid var(--gray-200);">
-                                    <div style="font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px;">📋 速查对比</div>
-                                    <div style="font-size:11px;color:var(--gray-400);">一张表对比全部9型 · 注意力/恐惧/快乐/激励方式/雷区</div>
-                                </div>
-                                <div style="background:white;padding:10px 14px;border-radius:8px;border:1px solid var(--gray-200);">
-                                    <div style="font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px;">🧪 九型测试</div>
-                                    <div style="font-size:11px;color:var(--gray-400);">18道在线测试题 · 自动生成评估报告</div>
-                                </div>
-                                <div style="background:white;padding:10px 14px;border-radius:8px;border:1px solid var(--gray-200);">
-                                    <div style="font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px;">📈 评估报告</div>
-                                    <div style="font-size:11px;color:var(--gray-400);">性格分析 · 擅长/不擅长工作 · 三阶段管理培养计划</div>
-                                </div>
-                            </div>
-                            <div class="tool-card-arrow">点击进入详细页面 →</div>
+                            <p>通过九型人格体系了解团队成员的性格特质，优化分工协作与沟通方式。</p>
+                            <span class="badge badge-purple">识人工具</span>
                         </a>
-
-                        <div class="tool-card">
+                        <a href="tools/super-values.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon blue">💎</div>
                                 <h4>舒伯价值观分析</h4>
                             </div>
                             <p>运用舒伯职业价值观理论，理解团队成员的内在驱动力，实现人岗匹配。</p>
                             <span class="badge badge-blue">价值观</span>
-                        </div>
-                        <div class="tool-card">
+                        </a>
+                        <a href="tools/performance-review.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon orange">📝</div>
                                 <h4>绩效面谈</h4>
                             </div>
                             <p>结构化绩效面谈框架与话术，让反馈更有效、让目标更清晰、让成长更可见。</p>
                             <span class="badge badge-orange">管理工具</span>
-                        </div>
-                        <div class="tool-card">
+                        </a>
+                        <a href="tools/training-system.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon green">🌱</div>
                                 <h4>新人培育体系</h4>
                             </div>
                             <p>从入职到独立的系统化培育路径，包括业务知识、技能训练与文化融入。</p>
                             <span class="badge badge-green">人才发展</span>
-                        </div>
+                        </a>
+                        <a href="tools/thinking-models.html" class="tool-card" style="text-decoration:none;display:block;">
+                            <div class="tool-card-header">
+                                <div class="tool-card-icon purple">🧠</div>
+                                <h4>思维模型</h4>
+                            </div>
+                            <p>经典商业思维模型在团队管理与业务场景中的应用，提升决策质量与洞察力。</p>
+                            <span class="badge badge-purple">认知升级</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Module 3: 企业文化 -->
-        <div class="module-card" id="culture" data-keywords="文化 案例 评选 价值观 活动 团建 激励 政策">
+        <div class="module-card" id="culture" data-keywords="文化 案例 评选 价值观 活动 团建">
             <div class="module-header" onclick="toggleModule(this)">
                 <div class="module-icon orange">🏛️</div>
                 <div class="module-info">
@@ -520,43 +770,45 @@
                     <p>打造有温度、有力量的团队文化</p>
                 </div>
                 <div class="module-toggle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </div>
             </div>
             <div class="module-body">
                 <div class="module-body-inner">
                     <div class="tool-grid">
-                        <div class="tool-card">
+                        <a href="tools/culture-awards.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon orange">🏆</div>
                                 <h4>企业文化评选</h4>
                             </div>
                             <p>定期评选文化标杆与优秀案例，让价值观看得见、摸得着、学得会。</p>
                             <span class="badge badge-orange">文化践行</span>
-                        </div>
-                        <div class="tool-card">
+                        </a>
+                        <a href="tools/case-studies.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon blue">📖</div>
                                 <h4>经典案例集</h4>
                             </div>
                             <p>记录团队中值得分享的真实故事与成功案例，沉淀组织智慧与最佳实践。</p>
                             <span class="badge badge-blue">知识沉淀</span>
-                        </div>
-                        <div class="tool-card">
+                        </a>
+                        <a href="tools/incentive-design.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon green">🎯</div>
                                 <h4>激励政策设计</h4>
                             </div>
                             <p>各类激励政策的设计框架与案例，激发团队内驱力，推动业绩持续增长。</p>
                             <span class="badge badge-green">激励机制</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Module 4: 其他 -->
-        <div class="module-card" id="others" data-keywords="AI 效率 资源 学习 行业 信息 政策 工具">
+        <div class="module-card" id="others" data-keywords="AI 效率 资源 学习 行业 信息 政策">
             <div class="module-header" onclick="toggleModule(this)">
                 <div class="module-icon purple">🚀</div>
                 <div class="module-info">
@@ -564,52 +816,57 @@
                     <p>AI 工具、行业资源与持续学习</p>
                 </div>
                 <div class="module-toggle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                 </div>
             </div>
             <div class="module-body">
                 <div class="module-body-inner">
                     <div class="tool-grid">
-                        <div class="tool-card">
+                        <a href="tools/ai-toolbox.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon teal">🤖</div>
                                 <h4>AI 工具箱</h4>
                             </div>
                             <p>日常工作提效的 AI 工具推荐与使用指南，让重复工作自动化、创意工作智能化。</p>
                             <span class="badge badge-green">效率工具</span>
-                        </div>
-                        <div class="tool-card">
+                        </a>
+                        <a href="tools/industry-news.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon blue">📰</div>
                                 <h4>行业信息抓取</h4>
                             </div>
                             <p>留学行业最新动态、政策变化与趋势分析的信息源与整理方法。</p>
                             <span class="badge badge-blue">信息洞察</span>
-                        </div>
-                        <div class="tool-card">
+                        </a>
+                        <a href="tools/learning-resources.html" class="tool-card" style="text-decoration:none;display:block;">
                             <div class="tool-card-header">
                                 <div class="tool-card-icon purple">📚</div>
                                 <h4>学习资源</h4>
                             </div>
                             <p>推荐阅读、课程与社群，涵盖销售技巧、管理方法论、行业知识等方向。</p>
                             <span class="badge badge-purple">持续学习</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>Built with ❤️ by <strong>Fancy</strong> · Powered by AI</p>
         <p style="margin-top: 4px; font-size: 12px; color: var(--gray-300);">"用 AI 做自己的工具，只差一个想法的距离"</p>
     </footer>
 
     <script>
+        // Toggle module
         function toggleModule(header) {
             const card = header.parentElement;
             const body = card.querySelector('.module-body');
             const isOpen = card.classList.contains('open');
+
             if (isOpen) {
                 body.style.maxHeight = '0';
                 card.classList.remove('open');
@@ -619,6 +876,7 @@
             }
         }
 
+        // Auto open first module
         document.addEventListener('DOMContentLoaded', () => {
             const firstCard = document.querySelector('.module-card');
             if (firstCard) {
@@ -627,6 +885,7 @@
                 firstCard.classList.add('open');
             }
 
+            // Intersection Observer for fade-in
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -635,23 +894,33 @@
                     }
                 });
             }, { threshold: 0.1 });
-            document.querySelectorAll('.module-card').forEach(card => observer.observe(card));
 
-            window.addEventListener('scroll', () => {
-                const nav = document.getElementById('navbar');
-                if (window.scrollY > 10) nav.classList.add('scrolled');
-                else nav.classList.remove('scrolled');
+            document.querySelectorAll('.module-card').forEach(card => {
+                observer.observe(card);
             });
 
+            // Nav scroll effect
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('navbar');
+                if (window.scrollY > 10) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu
             document.getElementById('mobileMenuBtn').addEventListener('click', () => {
                 document.getElementById('navLinks').classList.toggle('mobile-open');
             });
 
+            // Smooth scroll for nav links
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const target = document.querySelector(link.getAttribute('href'));
                     if (target) {
+                        // Open the module
                         const card = target;
                         if (!card.classList.contains('open')) {
                             const body = card.querySelector('.module-body');
@@ -665,21 +934,27 @@
             });
         });
 
+        // Search functionality
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase().trim();
             const modules = document.querySelectorAll('.module-card');
+
             if (!query) {
                 modules.forEach(mod => {
                     mod.classList.remove('search-hidden');
-                    mod.querySelectorAll('.tool-card').forEach(tool => tool.classList.remove('search-highlight'));
+                    mod.querySelectorAll('.tool-card').forEach(tool => {
+                        tool.classList.remove('search-highlight');
+                    });
                 });
                 return;
             }
+
             modules.forEach(mod => {
                 const keywords = mod.dataset.keywords || '';
                 const tools = mod.querySelectorAll('.tool-card');
                 let hasMatch = keywords.includes(query);
                 let toolHasMatch = false;
+
                 tools.forEach(tool => {
                     const text = tool.textContent.toLowerCase();
                     if (text.includes(query)) {
@@ -690,6 +965,7 @@
                         tool.classList.remove('search-highlight');
                     }
                 });
+
                 if (hasMatch) {
                     mod.classList.remove('search-hidden');
                     if (toolHasMatch) {
